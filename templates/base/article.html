@@ -1,0 +1,10 @@
+{%extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+<div class="main-container">
+    <h1>{{article.headline}}</h1>
+    <h4>{{article.Sub_headline}}</h4>
+    <img class="thumbnail" src="{{article.thumbnail.url}}">
+    <p>{{article.body|safe}}</p>
+</div>
+{% endblock content %}

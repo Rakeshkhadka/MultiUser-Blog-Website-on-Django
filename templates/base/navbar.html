@@ -1,0 +1,23 @@
+<div class="nav-wrapper">
+
+    <a href="{% url 'home'%}">
+        <li><a href="{% url 'home' %}">Home</a></li>
+    </a>
+    
+
+    <ul id="navigation">
+        <li><a href="{% url 'login' %}">Login</a></li>
+        {% if request.user.is_staff %}
+        <li><a href="{% url 'create-post' %}">Create Post</a></li>
+        <li><a href="{% url 'unpublishedposts' %}">Unpublished Posts</a></li>
+        {% endif %}
+        {% if request.user.is_authenticated %}
+        <span>
+            hello, {{request.user}}
+        </span>
+        <li><a href="{% url 'change_password' %}">Change Password</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% endif %}
+
+    </ul>
+</div>
